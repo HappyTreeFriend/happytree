@@ -1,0 +1,55 @@
+#!/usr/bin/env python
+#coding:utf-8
+
+from django.db import models
+from django.contrib.auth.models import User
+
+# Create your models here.
+
+class Tag(models.Model):
+	'''标签'''
+	t_name = models.CharField(max_length=50, verbose_name=u'标签名称')
+	author = models.ForeignKey(User, verbose_name=u'创建者')
+
+	def __unicode__(self):
+		return self.t_name
+	
+	def get_absolute_url(self):
+		return '/tag/%d/%s/' % (self.id, self.t_name.replace('/','-'))
+
+	class Meta:
+		ordering = ['t_name']
+		verbose_name_plural = verbose_name = u'标签'
+
+class Article(models.Model):
+	title = models.CharField(max_length=50, verbose_name=u'标题')
+	content = models.TextField(verbose_name=u'内容')
+	create_time = models.DateField(auto_now=True,verbose_name=u'创建时间')
+	view_num = models.IntegerField(default=0,verbose_name=u'浏览数')
+	comment_num = models.IntegerField(default=0,verbose_name=u'评论数')
+	author = models.ForeignKey(User,verbose_name=u'作者')
+	tag = models.ForeignKey(Tag,verbose_name=u'标签')
+
+	def __unicode__(self):
+		return self.title
+
+	def get_absolute_url(self):
+		return '/article/%d/%s/' % (self.id,self.title.replace('/','-'))
+
+	class Meta:
+		ordering = ['create_time']
+		verbose_name_plural = verbose_name = u'文章'
+		
+
+class Comment(models.Model):
+	content = models.TextField()
+	article = models.ForeignKey(Article)
+	create_time = models.DateField(auto_now=True)
+	author = models.ForeignKey(User)
+
+	def __unicode__(self):
+		return self.content[:5]
+
+	class Meta:
+		ordering = ['create_time']
+		verbose_name_plural = verbose_name = u'评论'

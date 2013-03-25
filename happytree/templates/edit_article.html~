@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block page %}编辑文章{% endblock %}
+
+{% block content %}
+<form action="{{ post_action }}" method="post" id="form_1">
+	<legend>标题：</legend>
+	<input type="text" name="title" placeholder="" required="required" title="标题"/>
+	<legend>标签：</legend>
+	<select id="tags" multiple="true" name="tags">
+		{% for tag in tags %}
+			<option value="{{ tag.id }}">{{ tag.t_name }}</option>
+		{% endfor %}
+	</select>
+	<legend>内容：</legend>
+	<textarea type="text" name="content"></textarea>
+	<p/>
+	<input type="submit" value="提交" />
+	<input type="submit" value="保存草稿" formaction="" />
+</form>		
+{% endblock %}

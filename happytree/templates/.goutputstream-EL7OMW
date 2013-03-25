@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<title>{% block page %}{% endblock %}</title>
+		{% block header %}{% endblock %}
+	</head>
+	<body>
+		<header>{% block title %}HappyTree{% endblock %}</header>
+		<h2>{% block menu %}{% endblock %}</h2>
+		<article>{% block content %}{% endblock %}</article>
+		<footer>
+		{% block footer %}
+		<hr/>
+		<p>
