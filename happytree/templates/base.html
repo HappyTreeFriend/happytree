@@ -7,17 +7,19 @@
 	<meta name="keywords" content="django,javascript" />
 	<meta name="author" content="Holbrook(http://hi.baidu.com/new/loveless_yu_yy)"/>
 	<!-- styles -->
-	<link href="{% static "css/bootstrap.css" %}" rel="stylesheet" />
+	<!--<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />-->
+	<link href="http://bootswatch.com/cerulean/bootstrap.css" rel="stylesheet" />
 	<!-- script -->
-	<script type="text/javascript" src="{% static "js/bootstrap.js" %}" />
+	<!--<script type="text/javascript" src="{% static 'js/bootstrap.js' %}" />-->
+	
 
 		<title>{% block page %}{% endblock %}</title>
 		{% block header %}{% endblock %}
 	</head>
 	<body>
-		<header>{% block title %}HappyTree{% endblock %}</header>
-		<h2>{% block menu %}{% endblock %}</h2>
-		<article>{% block content %}{% endblock %}</article>
+		<header class="navbar navbar-fixed-top navbar-inner">{% block title %}<a class="brand">HappyTree</a>{% endblock %}</header>
+		<h2 class="btn btn-navbar">{% block menu %}{% endblock %}</h2>
+		<article class="lead">{% block content %}{% endblock %}</article>
 		<footer>
 		{% block footer %}
 		<hr/>
