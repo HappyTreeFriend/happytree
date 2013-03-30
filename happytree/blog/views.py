@@ -32,8 +32,12 @@ def add_article(request):
 def show_article(request,a_id):
 	'''查看文章'''
 	try:
+		import pdb
 		article = Article.objects.get(id=a_id)
-		comment = Comment.objects.get(article_id=a_id)
+		try:
+			comment = Comment.objects.get(article_id=a_id)
+		except Comment.DoesNotExist:
+			comment = {}
 		return render_to_response('show_article.html',{'article':article,'comment':comment},context_instance=RequestContext(request))
 	except ValueError:
 		raise Http404

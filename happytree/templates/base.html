@@ -7,20 +7,24 @@
 	<meta name="keywords" content="django,javascript" />
 	<meta name="author" content="Holbrook(http://hi.baidu.com/new/loveless_yu_yy)"/>
 	<!-- styles -->
-	<!-- <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" /> -->
 	<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
-	<!--<link href="http://bootswatch.com/cerulean/bootstrap.css" rel="stylesheet" />-->
+	<link href="{% static 'css/base.css' %}" rel="stylesheet" />
 	<!-- script -->
-	<!-- <script type="text/javascript" src="{% static 'js/bootstrap.js' %}" /> -->
-	
-
-		<title>{% block page %}{% endblock %}</title>
-		{% block header %}{% endblock %}
+	<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+	<title>{% block page %}{% endblock %}</title>
+	{% block header %}{% endblock %}
 	</head>
 	<body>
-		<header><h2>{% block title %}<a href="http://127.0.0.1:8000">HappyTree</a>{% endblock %}</h2></header>
-		<div id="menu"><h4>{% block menu %}{% endblock %}</h4></div>
-		<article>{% block content %}{% endblock %}</article>
+		<div id="top">
+			<header><h2>{% block title %}<a href="/">HappyTree</a>{% endblock %}</h2></header>
+		</div>
+		<div id="left">
+			<div id="menu"><h4>{% block menu %}{% endblock %}</h4></div>
+		</div>
+		<div id="right">
+			<article>{% block content %}{% endblock %}</article>
+		</div>
 		<footer>
 		{% block footer %}
 		<hr/>

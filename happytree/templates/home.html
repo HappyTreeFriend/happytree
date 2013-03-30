@@ -17,6 +17,7 @@
 	{% if articles %}
 		<p>日志</p>
 		{% for article in articles %}
+		<hr/>
 			<section id="article_id_{{ article.id }}" >
 			<p><a href='{{ article.id }}/show' ><strong>{{ article.title }}</strong></a></p>
 			<p><strong>{{ article.content }}</strong>
