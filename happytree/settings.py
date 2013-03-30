@@ -7,6 +7,7 @@ import os
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 HERE = os.path.join(os.path.dirname(__file__)).replace('\\','/')
+site = 'http://127.0.0.1:8000'
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -100,7 +101,7 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:

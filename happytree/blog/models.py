@@ -41,11 +41,12 @@ class Article(models.Model):
 		verbose_name_plural = verbose_name = u'文章'
 		
 	#其他功能
-	def post_article(self,my_obj):
-		p_a = Article(title=my_obj.title,content=my_obj.content,author=my_obj.user,tag=my_obj.tag)
+	def post_article(self,**my_obj):
 		import pdb
 		pdb.set_trace()
+		p_a = Article(title=my_obj.get('title'),content=my_obj.get('content'),author=my_obj.get('user'),tag=my_obj.get('tag'))
 		p_a.save()
+		return HttpResponseRedirect('/blog')
 
 class Comment(models.Model):
 	content = models.TextField()

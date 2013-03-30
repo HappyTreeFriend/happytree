@@ -25,7 +25,7 @@ def add_article(request):
 	try:
 		tags = Tag.objects.values('id','t_name')
 		print tags
-		return render_to_response('edit_article.html',{'tags':tags,'post_action':'/add/post_article/'},context_instance=RequestContext(request))
+		return render_to_response('edit_article.html',{'tags':tags,'post_action':'/blog/add/post_article/'},context_instance=RequestContext(request))
 	except ValueError:
 		raise Http404
 
@@ -40,10 +40,9 @@ def show_article(request,a_id):
 
 def post_article(request):
 	try:
-		import pdb
-		pdb.set_trace()
-		my_obj = {'title':request.POST['title'],'content':request.POST['content'],'author':request.user,'tag':request.POST['tag']}
-		Article.post_article(my_obj)
+		#my_obj = {'title':request.POST['title'],'content':request.POST['content'],'author':request.user,'tag':request.POST['tags']}
+		my_obj = {'title':request.POST['title'],'content':request.POST['content'],'author':'natsuki','tag':request.POST['tags']}
+		Article().post_article(**my_obj)
 		return HttpResponse('post success!')
 	except ValueError:
 		raise Http404

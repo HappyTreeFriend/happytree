@@ -5,9 +5,11 @@
 {% block content %}
 	<section id="article_id_{{ article.id }}">
 		<p><strong>{{ article.title }}</strong></p>
-		<p><strong>{{ article.content }}</strong></p>
+		<p>{{ article.content }}</p>
+		<hr/>
 		<p><small>{{ article.tag }}</small></p>
 	</section>
+	<hr/>
 	<section id="comm">
 	<div id="comm_id_{{ comment.id }}">
 		<p>{{ comment.author }}</p>
