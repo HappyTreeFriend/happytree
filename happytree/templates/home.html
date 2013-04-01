@@ -20,10 +20,7 @@
 				</p>
 			</div>
 			<div class="boxbgb">
-				<div class="label">
-					<span class="time"><a href="#">2013-03-31</a></span>
-					<span class="tag">/&nbsp;&nbsp;标签&nbsp;:&nbsp;<a href="#">{{ article.tag }}</a><a href="#">linux</a></span>
-				</div>
+				<div class="label"><span class="time"><a href="#">{{ article.create_time }}</a></span><span class="tag">/&nbsp;&nbsp;标签&nbsp;:&nbsp;<a href="#">{{ article.tag }}</a><a href="#">linux</a></span><span>浏览数:{{ article.view_num }}</span>&nbsp;&nbsp;<span>评论数:{{ article.comment_num }}</span>&nbsp;&nbsp;<span>author:<a href="#">{{ article.author }}</a><a href="#">test</a></span></div>
 			</div>
 		</section>
 		{% endfor %}

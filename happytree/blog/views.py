@@ -12,7 +12,8 @@ import global_val
 def home(request):
 	'''首页'''
 	try:
-		articles = Article.objects.values('id','title','content','tag')
+		articles = Article.objects.values('id','title','content','tag',
+                                   'create_time','view_num','comment_num','author')
 		#print articles
 		#import pdb
 		#pdb.set_trace()

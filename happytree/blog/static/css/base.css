@@ -18,6 +18,7 @@ a, a:hover, a:visited{
 /*base*/
 #wrapper{
 	margin: auto;
+	margin-top: -12px;
 	padding: 0;
 	width: 920px;
 	position: relative;
@@ -28,12 +29,16 @@ a, a:hover, a:visited{
 	border-style: dotted;
 	border-color: #4e2620;
 	border-radius: 10px;
-	/*background-color: #7cb5ea;*/
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-top-width: 0px;
 	padding: 6px;
+	padding-top: 0px;
 }
 #top_background{
-	/*border-style: dotted;*/
 	border-radius: 10px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
 	height: 140px;
 	width: 670px;
 	background-image: url(../img/top.jpg);
@@ -142,7 +147,7 @@ a, a:hover, a:visited{
 }
 .tag{
 	float:left;
-	width:340px;
+	width: 230px;
 	overflow:hidden;
 	white-space:nowrap
 }
