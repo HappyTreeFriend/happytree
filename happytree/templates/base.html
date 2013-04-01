@@ -1,35 +1,39 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-	{% load static from staticfiles %}
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="description" content="HappyTree"/>
-	<meta name="keywords" content="django,javascript" />
-	<meta name="author" content="Holbrook(http://hi.baidu.com/new/loveless_yu_yy)"/>
-	<!-- styles -->
-	<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
-	<link href="{% static 'css/base.css' %}" rel="stylesheet" />
-	<!-- script -->
-	<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/base.js' %}"></script>
-	<title>{% block page %}{% endblock %}</title>
-	{% block header %}{% endblock %}
+		{% load static from staticfiles %}
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="description" content="HappyTree"/>
+		<meta name="keywords" content="django,javascript" />
+		<meta name="author" content="Holbrook(http://hi.baidu.com/new/loveless_yu_yy)"/>
+		<!-- styles -->
+		<link rel="stylesheet" type="text/css" href="{% static 'css/yui.css' %}">
+		<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+		<link href="{% static 'css/base.css' %}" rel="stylesheet" />
+		<!-- script -->
+		<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+		<title>{% block page %}{% endblock %}</title>
+		{% block header %}{% endblock %}
 	</head>
 	<body>
-		<div id="top">
-			<header><h2>{% block title %}<a href="/">HappyTree</a>{% endblock %}</h2></header>
+		<div id="wrapper">
+			<!-- top title description -->
+			<header id="top">
+				<div id="top_background"></div>
+				<div id="top_title">
+					<h2>{% block title %}<a href="/">HappyTree</a>{% endblock %}</h2>
+					<h5>happytree blog</h5>
+				</div>
+			</header>
+			<section id="content" class="container">
+				{% block content %}{% endblock %}
+			</section>
+			<footer class="footer">
+				{% block footer %}
+				<span title="Copyright" style="cursor:pointer;">©</span>&nbsp;<a href="#">儿童脑细胞研究所</a>&nbsp;|&nbsp;Powered by <a href="#">happytree</a>
+				{% endblock %}
+			</footer>
 		</div>
-		<div id="left">
-			<div id="menu"><h4>{% block menu %}{% endblock %}</h4></div>
-		</div>
-		<div id="right">
-			<article>{% block content %}{% endblock %}</article>
-		</div>
-		<footer>
-		{% block footer %}
-		<hr/>
-		<p>欢迎光临！</p>
-		{% endblock %}
-		</footer>
 	</body>
 </html>

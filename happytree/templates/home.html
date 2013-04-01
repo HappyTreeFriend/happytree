@@ -1,30 +1,70 @@
 {% extends "base.html" %}
 
-{% block page %}首页{% endblock %}
-
-{% block menu %}
-	{% if navs %}
-		{% for nav in navs %}
-		<!--		<a href="{{ nav.url }}">{{ nav.name }}</a> 	-->
-		{% endfor %}
-	{% else %}
-	<p>暂时没有导航菜单</p>
-	{% endif %}
-	<!--<a href="add">写日志</a>-->
-{% endblock %}
+{% block page %}HOME{% endblock %}
 
 {% block content %}
-	{% if articles %}
-		<p>日志</p>
+{% load static from staticfiles %}
+<!-- left article -->
+<section id="left">
+	<article>
+{% block main %}
+		{% if articles %}
+		<!--<h4>日志</h4>-->
 		{% for article in articles %}
-		<hr/>
-			<section id="article_id_{{ article.id }}" >
-			<p><a href='{{ article.id }}/show' ><strong>{{ article.title }}</strong></a></p>
-			<p><strong>{{ article.content }}</strong>
-			<span><small>{{ article.tag }}</small></span></p>
-			</section>
+		<section id="article_id_{{ article.id }}" class="block article" >
+			<div class="boxbgm"></div>
+			<div class="text">
+				<h2><a href='{{ article.id }}/show' ><strong>{{ article.title }}</strong></a></h2>
+				<p>
+					{{ article.content }}
+				</p>
+			</div>
+			<div class="boxbgb">
+				<div class="label">
+					<span class="time"><a href="#">2013-03-31</a></span>
+					<span class="tag">/&nbsp;&nbsp;标签&nbsp;:&nbsp;<a href="#">{{ article.tag }}</a><a href="#">linux</a></span>
+				</div>
+			</div>
+		</section>
 		{% endfor %}
-	{% else %}
-		<p>暂时还没有日志</p>
-	{% endif %}
+		{% else %}
+		<p>
+			暂时还没有日志
+		</p>
+		{% endif %}
+		{% endblock%}
+	</article>
+</section>
+<!-- right menu -->
+<section id="right">
+	<div id="self">
+		<div id="img_around"><img id="head" class="img-circle" src="{% static 'user/head.jpg' %}" />
+		</div>
+	</div>
+	<div class="block sch">
+		<form action="#" method="get">
+			<input value="搜索" type="text" name="q" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}">
+		</form>
+	</div>
+	<ul id="menu" class="nav nav-list well">
+		<!--<li class="active">
+		<a href="#"><i class="icon-home icon-white"></i> Home</a>
+		</li>
+		<li>
+		<a href="#"><i class="icon-book"></i> Library</a>
+		</li>-->
+		{% if navs %}
+		{% for nav in navs %}
+		<li>
+			<a href="{{ nav.url }}"><i class="{{ nav.icon }}"></i>{{ nav.name }}</a>
+		</li>
+		{% endfor %}
+		{% else %}
+		<li>
+			<a href="#"><i class="icon-chevron-right"></i> nothing</a>
+		</li>
+		{% endif %}
+		<!--<a href="add">写日志</a>-->
+	</ul>
+</section>
 {% endblock %}

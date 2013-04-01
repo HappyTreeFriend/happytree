@@ -5,6 +5,7 @@ from django.http import Http404,HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from models import Article,Tag,Comment
+import global_val
 
 # Create your views here.
 
@@ -12,11 +13,10 @@ def home(request):
 	'''首页'''
 	try:
 		articles = Article.objects.values('id','title','content','tag')
-		navs = {'url':'add','name':u'写日志'}
 		#print articles
 		#import pdb
 		#pdb.set_trace()
-		return render_to_response('home.html',{'articles':articles,'navs':navs},context_instance=RequestContext(request));
+		return render_to_response('home.html',{'articles':articles,'navs':global_val.navs},context_instance=RequestContext(request));
 	except ValueError:
 		raise Http404
 
@@ -38,7 +38,7 @@ def show_article(request,a_id):
 			comment = Comment.objects.get(article_id=a_id)
 		except Comment.DoesNotExist:
 			comment = {}
-		return render_to_response('show_article.html',{'article':article,'comment':comment},context_instance=RequestContext(request))
+		return render_to_response('show_article.html',{'article':article,'comment':comment,'navs':global_val.navs},context_instance=RequestContext(request))
 	except ValueError:
 		raise Http404
 

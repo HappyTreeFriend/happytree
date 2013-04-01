@@ -1,0 +1,206 @@
+/*reset*/
+hr{
+	border-color: #4e2620;
+	border-width:1px;
+	border-style: dashed;
+	
+	/*border-style: solid;
+	border-width: 15px 0px 0px 0px;
+	-moz-border-image: url(../img/hr.gif) 25 59 25 77 round;
+	-webkit-border-image: url(../img/hr.gif) 25 59 25 77 round;
+	-o-border-image: url(../img/hr.gif) 25 59 25 77 round;
+	border-image: url(../img/hr.gif) 25 59 25 77 fill round;
+	*/
+}
+a, a:hover, a:visited{
+	color: #fb6c7a;
+}
+/*base*/
+#wrapper{
+	margin: auto;
+	padding: 0;
+	width: 920px;
+	position: relative;
+}
+/*top_header*/
+#top{
+	height: 140px;
+	border-style: dotted;
+	border-color: #4e2620;
+	border-radius: 10px;
+	/*background-color: #7cb5ea;*/
+	padding: 6px;
+}
+#top_background{
+	/*border-style: dotted;*/
+	border-radius: 10px;
+	height: 140px;
+	width: 670px;
+	background-image: url(../img/top.jpg);
+	background-repeat: no-repeat;
+	float: right;
+}
+#top_title{
+	margin-left: 5px;
+}
+#top_title a{
+	color: #4e2620;
+}
+#top_title a:hover{
+	text-decoration: none;
+	color: #683931;
+}
+#top_title h5{
+	color: #e9533a;
+	margin-left: 5px;
+}
+/*left*/
+#left{
+	width: 660px;
+	float: left;
+}
+/*right*/
+#right{
+	width: 230px;
+	float: right;
+	position: relative;
+	left: -25px;
+}
+
+/*content*/
+#content{
+	margin-top:30px;
+}
+/*article*/
+.boxbgb{
+	background:url(../img/5629517126399171925.png) no-repeat;
+	_background:url(../img/5629517126399171926.png) no-repeat
+}
+.time a,.tag a,.favr a,.ulike a{
+	background:url(../img/5629517126399171923.png) -999px -999px no-repeat;
+	_background:url(../img/5629517126399171924.png) -999px -999px no-repeat
+}
+.block{
+	padding:0 0 46px
+}
+.boxbgm{
+	height:64px;
+	background-position:0 -9px;
+	background:url(../img/5629517126399171920.png) no-repeat;
+}
+.text{
+	background:url(../img/5629517126399171927.png) repeat-y;
+	padding: 0 40px 20px 80px;
+	overflow: hidden;
+	word-wrap: break-word;
+	zoom: 1;
+	font-size: 12px;
+	color: #5e616c;
+	line-height: 21px;
+}
+.boxbgb{
+	height:88px;
+	background-position:-7px 0
+}
+.label{
+	*float:left;
+	padding:10px 30px 0 80px;
+	font-size:11px;
+	color:#a4a5aa
+}
+.label a{
+	padding-left:18px;
+	background-color:transparent;
+	color:#a4a5aa;
+	-webkit-transition-property:background-position,color;
+	-webkit-transition-duration:.3s,.1s;
+	-webkit-transition-timing-function:linear,linear;
+	-moz-transition-property:background-position,color;
+	-moz-transition-duration:.3s,.1s;
+	-moz-transition-timing-property linear,linear:-ms-transition-property:background-position,color;
+	-ms-transition-duration:.3s,.1s;
+	-ms-transition-timing-property:linear,linear;
+	-o-transition-property:background-position,color;
+	-o-transition-duration:.3s,.1s;
+	-o-transition-timing-property:linear,linear;
+	transition-property:background-position,color;
+	transition-duration:.3s,.1s;
+	transition-timing-property:linear,linear
+}
+.label a:hover,.source:hover{
+	color:#5e6066
+}
+.time{
+	float:left
+}
+.time a{
+	margin-right:5px;
+	background-position:0 2px
+}
+.time a:hover{
+	background-position:0 -22px
+}
+.tag{
+	float:left;
+	width:340px;
+	overflow:hidden;
+	white-space:nowrap
+}
+.tag a{
+	padding:0 5px 0 0
+}
+.article .boxbgm{
+	height:38px;
+	background-position:0 -80px
+}
+.block .article *{
+
+}
+/*menu*/
+#menu.well{
+	margin-top:25px;
+	background-color:#fff;
+	/*border-color: #ccc;*/
+	border-style: solid;
+	border-width: 10px 0px;
+	-moz-border-image: url(../img/self.gif) 25 59 25 77 round;
+	-webkit-border-image: url(../img/self.gif) 25 59 25 77 round;
+	-o-border-image: url(../img/self.gif) 25 59 25 77 round;
+	border-image: url(../img/self.gif) 25 59 25 77 fill round;
+}
+/*search*/
+.block.sch{
+	padding: 0px;
+}
+.sch form{
+	display:block;
+}
+.sch input {
+	width: 130px;
+	padding: 6px 5px 5px 30px;
+	border-radius: 25px;
+	background-position: 10px 6px;
+	background: url(../img/5629517126399171930.png) no-repeat;
+	background-position-x: 8px;
+	background-position-y: 7px;
+	height: 13px;
+	margin-left: 20px;
+}
+/*self*/
+#self .img-circle{
+}
+/*footer*/
+footer{
+	height: 50px;
+	margin: 0 2px;
+	background-color: #41454e;
+	background-position: -2px -130px;
+	line-height: 50px;
+	color: #8897a7;
+	text-indent: 2em;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+footer a, footer a:hover, footer a:visited{
+	color:#8897a7;
+}
